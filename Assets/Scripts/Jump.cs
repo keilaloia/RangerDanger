@@ -1,41 +1,26 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-//public class Jump : MonoBehaviour {
+public class Jump : MonoBehaviour
+{
+    
+    public AnimationCurve hops;
+    public Rigidbody2D rb2D;
 
+    // Use this for initialization
+    void Start()
+    {
+        rb2D = GetComponent<Rigidbody2D>();
 
-//    public float Epower = 5.0f;
-//    public float radius = 1.0f;
-//    public bool isGrounded = false;
+    }
 
-//    private void OnCollisionStay(Collision collision)
-//    {
-//        isGrounded = true;
-//    }
-
-//    private void OnCollisionExit(Collision collision)
-//    {
-//        isGrounded = false;
-//    }
-//    // Use this for initialization
-//    void Start()
-//    {
-//        Vector2 explosionPos = transform.position;
-
-//    }
-
-//    // Update is called once per frame
-//    void Update()
-//    {
-//        Rigidbody2D rbody = GetComponent<Rigidbody2D>();
-
-//        if (Input.GetKeyDown("space") && isGrounded == true)
-//        {
-//            Debug.Log("please");
-//            rbody.
-
-
-//        }
-//    }
-//}
+    // Update is called once per frame
+    void Update()
+    {
+       if(Input.GetKeyUp(KeyCode.Space))
+        {
+            //rb2D.AddForce(Vector2.up * hops.Evaluate);
+        }
+    }
+}
